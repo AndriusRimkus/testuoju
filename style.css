@@ -1,0 +1,28 @@
+/*Removes button focus*/
+button.md-default-theme:not([disabled]).md-focused {
+    background-color: transparent !important;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+form {
+    margin-bottom: 0;
+}
+
+.button-login {
+    min-width: 100%;
+    margin: 0;
+    height: 42px
+}
+
+md-toolbar.md-default-theme {
+    background-color: rgb(16,108,200);
+}
+
+md-fab-speed-dial {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}

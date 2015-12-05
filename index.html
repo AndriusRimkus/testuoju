@@ -1,0 +1,138 @@
+<html lang="en" ng-app="StarterApp">
+<head>
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1" />
+</head>
+<!--<div ng-controller="DemoCtrl as demo" layout="column" ng-cloak="" class="fabSpeedDialdemoBasicUsage" ng-app="MyApp">-->
+    <!--<md-content class="md-padding" layout="column">-->
+        <!--<p>-->
+            <!--You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or-->
+            <!--<code>right</code> through the <code>md-direction</code> attribute.-->
+        <!--</p>-->
+
+        <!--<div class="lock-size" layout="row" layout-align="center center">-->
+            <!--<md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}" ng-class="demo.selectedMode">-->
+                <!--<md-fab-trigger>-->
+                    <!--<md-button aria-label="menu" class="md-fab md-warn">-->
+                        <!--labas-->
+                    <!--</md-button>-->
+                <!--</md-fab-trigger>-->
+
+                <!--<md-fab-actions>-->
+                    <!--<md-button aria-label="Twitter" class="md-fab md-raised md-mini">-->
+                        <!--labas-->
+                    <!--</md-button>-->
+                    <!--<md-button aria-label="Facebook" class="md-fab md-raised md-mini">-->
+                        <!--labas-->
+                    <!--</md-button>-->
+                    <!--<md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">-->
+                        <!--labas-->
+                    <!--</md-button>-->
+                <!--</md-fab-actions>-->
+            <!--</md-fab-speed-dial>-->
+        <!--</div>-->
+
+        <!--<div layout="row" layout-align="space-around">-->
+            <!--<div layout="column" layout-align="start center">-->
+                <!--<b>Direction</b>-->
+
+                <!--<md-radio-group ng-model="demo.selectedDirection">-->
+                    <!--<md-radio-button ng-repeat="direction in demo.availableDirections" ng-value="direction" class="text-capitalize">-->
+                        <!--{{direction}}-->
+                    <!--</md-radio-button>-->
+                <!--</md-radio-group>-->
+            <!--</div>-->
+
+            <!--<div layout="column" layout-align="start center">-->
+                <!--<b>Open/Closed</b>-->
+
+                <!--<md-checkbox ng-model="demo.isOpen">-->
+                    <!--Open-->
+                <!--</md-checkbox>-->
+            <!--</div>-->
+
+            <!--<div layout="column" layout-align="start center">-->
+                <!--<b>Animation Modes</b>-->
+
+                <!--<md-radio-group ng-model="demo.selectedMode">-->
+                    <!--<md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">-->
+                        <!--{{mode}}-->
+                    <!--</md-radio-button>-->
+                <!--</md-radio-group>-->
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</md-content>-->
+<!--</div>-->
+<body layout="column" ng-controller="AppCtrl" >
+
+    <md-content style="overflow: hidden">
+        <md-toolbar class="demo-toolbar md-primary">
+            <div class="md-toolbar-tools">
+            <h3 class="ng-binding">Paint The Planet</h3>
+            <span flex=""></span>
+            <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Favorite">
+                <i class="material-icons md-36">account_circle</i>
+            </md-button>
+            </div>
+        </md-toolbar>
+        <md-fab-speed-dial md-direction="up" class="md-fling">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                    labas
+                </md-button>
+            </md-fab-trigger>
+
+            <md-fab-actions>
+                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                    labas
+                </md-button>
+                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                    labas
+                </md-button>
+                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                    labas
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <section layout-fill layout="row" layout-padding style="min-height: calc(100% - 80px);">
+            <div id="map" ></div>
+        </section>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Login</h1>
+            </md-toolbar>
+            <md-content ng-controller="RightCtrl" layout-padding="">
+                <form>
+                    <md-input-container>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" ng-model="username" md-autofocus="">
+                    </md-input-container>
+                    <md-input-container>
+                        <label for="password">Password</label>
+                        <input type="text" id="password" ng-model="password">
+                    </md-input-container>
+                </form>
+                <md-button class="button-login md-raised md-primary">Login</md-button>
+                <h3 class="md-title"><a href="">Register here</a></h3>
+            </md-content>
+        </md-sidenav>
+    </md-content>
+
+<!-- Angular Material Dependencies -->
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="scripts/libs/gmaps.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
